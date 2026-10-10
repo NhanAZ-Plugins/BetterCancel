@@ -14,11 +14,20 @@ class Main extends PluginBase {
 		$manager = $this->getServer()->getPluginManager();
 
 		$handler = static function (BlockBreakEvent|BlockPlaceEvent $event): void {
-			if (!$event->isCancelled()) return;
+			if (!$event->isCancelled()) {
+				return;
+			}
 			$player = $event->getPlayer();
 			$session = $player->getNetworkSession();
 			$session->sendDataPacket(DenySound::getPacket($player->getLocation()));
-			$session->sendDataPacket(ForceFieldParticle::getPacket($event->getBlock()->getPosition()));
+			if ($event instanceof BlockBreakEvent) {
+				$session->sendDataPacket(ForceFieldParticle::getPacket($event->getBlock()->getPosition()));
+				return;
+			}
+			foreach ($event->getTransaction()->getBlocks() as [$x, $y, $z, $block]) {
+				$session->sendDataPacket(ForceFieldParticle::getPacket($block->getPosition()));
+				break;
+			}
 		};
 
 		$manager->registerEvent(

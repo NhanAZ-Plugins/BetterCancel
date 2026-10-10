@@ -1,9 +1,9 @@
 ---
 name: BetterCancel
-version: 1.0.4
+version: 1.0.5
 main: NhanAZ\BetterCancel\Main
 api: 5.0.0
 author: NhanAZ
-website: https://github.com/NhanAZ
-description: "BlockBreakEvent and BlockPlaceEvent is better when canceled!"
+website: https://github.com/NhanAZ-Plugins/BetterCancel
+description: Show a denial sound and particle when a block action is cancelled.
 ...
