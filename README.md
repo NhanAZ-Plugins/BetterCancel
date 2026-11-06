@@ -24,7 +24,7 @@ Download `BetterCancel.phar` from [GitHub releases](https://github.com/NhanAZ-Pl
 
 ## Building and testing
 
-The [build workflow](.github/workflows/build.yml) runs `php tests/cancel-events.php`, PHPStan at maximum level, and [DevTools](https://github.com/NhanAZ/DevTools). DevTools builds the PHAR and checks its checksum and license. The local event fixture checks cancelled and allowed actions and the selected block position. It does not connect a Bedrock client.
+The [build workflow](.github/workflows/build.yml) runs `php tests/cancel-events.php`, PHPStan at maximum level, and [DevTools](https://github.com/AxolotlBucketLabs/DevTools). DevTools builds the PHAR and checks its checksum and license. The local event fixture checks cancelled and allowed actions and the selected block position. It does not connect a Bedrock client.
 
 ## License and support
 
