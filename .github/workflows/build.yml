@@ -50,7 +50,7 @@ jobs:
 
       - name: Run PHPStan max and build with DevTools
         id: build
-        uses: AxolotlBucketLabs/DevTools@v3 # v3.0.0
+        uses: AxolotlBucketLabs/DevTools@latest
         with:
           phpstan: max
           phpstan-server: .devtools-dependencies/axolotl-pm
